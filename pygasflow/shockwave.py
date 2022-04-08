@@ -517,12 +517,12 @@ def normal_mach_upstream(M1, beta=None, theta=None, gamma=1.4, flag="weak"):
         MN1 = M1 * np.sin(beta)
     elif theta is not None:
         # check for detachment (when theta > theta_max(M1))
-        theta_max = max_theta_from_mach(M1, gamma)
-        if np.any(theta > theta_max):
-            raise ValueError("Detachment detected: can't solve the flow when theta > theta_max.\n" +
-            "M1 = {}\n".format(M1) +
-            "theta_max(M1) = {}\n".format(theta_max) +
-            "theta = {}\n".format(theta))
+        #theta_max = max_theta_from_mach(M1, gamma)
+        #if np.any(theta > theta_max):
+            #3raise ValueError("Detachment detected: can't solve the flow when theta > theta_max.\n" +
+            #"M1 = {}\n".format(M1) +
+            #"theta_max(M1) = {}\n".format(theta_max) +
+            #"theta = {}\n".format(theta))
         beta = beta_from_mach_theta(M1, theta)
         MN1 = dict()
         for k,v in beta.items():
